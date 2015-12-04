@@ -40,13 +40,13 @@ function parseCreative (creative) {
 
             printToCurrent ('Line Items: ' + (object._adgroup2_ids_ || []).join (', '));
             group ();
-            object._adgroup2_ids_.forEach (function (id) {
+            if(!!object._adgroup2_ids_) object._adgroup2_ids_.forEach (function (id) {
                 printToCurrent ('https://www.google.com/dfp/' + network + '#delivery/LineItemDetail/lineItemId=' + id);
             });
             groupEnd ();
             printToCurrent ('Creatives: ' + (object._creative_ids_ || []).join (', '));
             group ();
-            object._creative_ids_.forEach (function (id) {
+            if(!!object._creative_ids_) object._creative_ids_.forEach (function (id) {
                 printToCurrent ('https://www.google.com/dfp/' + network + '#delivery/CreativeDetail/creativeId=' + id);
             });
             groupEnd ();
